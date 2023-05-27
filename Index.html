@@ -1,0 +1,962 @@
+<html class="h-100">
+
+<head>
+    <title>ALL GAMES</title>
+    <link rel="shortcut icon" href="Fotos/logo/Logo/ALLGAMESS.png">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .espacioentrebarras {
+            padding-right: 81px;
+            padding-left: 40px;
+            pxtext-align: center;
+        }
+        .espacioentrefollow{
+            margin-bottom: 10px;
+        }
+        .espacioenlabarra{
+            margin-top: 21px;
+        }
+        .espacioderechaQR{
+            margin-left: 80px;
+        }
+        .caja1{
+            width: auto;
+            height: 200px;
+            background: #CCC;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .caja1 img{
+            width: 100%;
+            height: auto;
+        }
+        @supports(object-fit: cover){
+            .caja1 img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+        footer {
+            display: block;
+            width: 100%;
+        }
+        .dropdown-perfil::after {
+            content: none;
+        }
+        .Principal{
+            margin-top:120px;
+            border: 5px ;
+            padding: 10px;
+            margin-right:auto;
+            margin-left:auto;
+            width: 90%;
+        }
+        .prueba1 {
+            max-width: 80%;
+            border-radius: 10px;
+        }
+        .colorFondoGrisinventario{
+            background:#F8F9FA;
+            border-radius: 10px;
+            box-shadow: 7px 9px 15px black inset;
+        }
+        .centrarfotosinventario{
+            padding:10px 10px 10px 25px;
+        }
+        div[id="msg_error"]{
+            box-shadow: 1px 1px 10px 2px  #ff0000;
+            margin: 10px auto;
+            border-radius: 7px;
+            padding: 20px 40px;
+            float: none;
+        }
+        .error{
+            background-color: #ff8080;
+        }
+        body {
+            background-image: url('Fotos/FondoPagina/Galaxy_yellow.jpg');
+        }
+    </style>
+</head>
+<body >
+<!-- NAVBAR barra-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+        <!--Crear Cuenta(Capsulas > Lista > Mi Perfil)-->
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!--Creacion del Titulo-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Creacion de Cuenta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!--Fallos Formulario Correo,etc -->
+                        <div class="col-6" id="msg_error">
+                        </div>
+                    <!--Todos los div nombre correo etc-->
+                    <form>
+                        <div class="modal-body row">
+                            <!--Nombre y Apellido-->
+                            <div class="row">
+                                <!--Nombre-->
+                                <div class="d-flex col-6  ms-auto mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg>
+                                        </span>
+                                    <input type="text" class="form-control" id="nom" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                                </div>
+                                <!--Apellido-->
+                                <div class="d-flex col-6  ms-auto mb-3">
+                                        <span class="input-group-text" id="basic-addon2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg>
+                                        </span>
+                                    <input type="text" class="form-control"id="llin1" placeholder="Apellido" aria-label="Apellido" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <!--Correo y Contrseña-->
+                            <div class="row">
+                                <!--Correo-->
+                                <div class="d-flex col-6  ms-auto mb-3">
+                                        <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/></svg>
+                                        </span>
+                                    <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                                </div>
+                                <!--Contraseña-->
+                                <div class="d-flex col-6 ms-auto mb-3">
+                                        <span class="input-group-text" id="basic-addon4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                            <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                                        </span>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                </div>
+                            </div>
+                            <!--Fecha y Region-->
+                            <div class="row">
+                                <!--Fecha-->
+                                <div class="d-flex col-6  ms-auto mb-3">
+                                    <span class="input-group-text" id="basic-addon6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                                            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                                            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                        </svg>
+                                    </span>
+                                    <input type="date" class="form-control" id="date1" min="1900-01-01" max="3000-01-01">
+                                </div>
+                                <!--Region-->
+                                <div class="d-flex col-6  ms-auto mb-3">
+                                    <span class="input-group-text" id="basic-addon5"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
+                                        <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/></svg>
+                                    </span>
+                                    <select class="form-control" id="country" name="country">
+                                        <option>Seleciona una Region</option><option value="Afganistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="American Samoa">American Samoa</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Anguilla">Anguilla</option><option value="Antigua & Barbuda">Antigua & Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bonaire">Bonaire</option><option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option><option value="Botswana">Botswana</option><option value="Brazil">Brazil</option><option value="British Indian Ocean Ter">British Indian Ocean Ter</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Canary Islands">Canary Islands</option><option value="Cape Verde">Cape Verde</option><option value="Cayman Islands">Cayman Islands</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Channel Islands">Channel Islands</option><option value="Chile">Chile</option><option value="China">China</option><option value="Christmas Island">Christmas Island</option><option value="Cocos Island">Cocos Island</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo">Congo</option><option value="Cook Islands">Cook Islands</option><option value="Costa Rica">Costa Rica</option><option value="Cote DIvoire">Cote DIvoire</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Curaco">Curacao</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="East Timor">East Timor</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands">Falkland Islands</option><option value="Faroe Islands">Faroe Islands</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="French Guiana">French Guiana</option><option value="French Polynesia">French Polynesia</option><option value="French Southern Ter">French Southern Ter</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Great Britain">Great Britain</option><option value="Greece">Greece</option><option value="Greenland">Greenland</option><option value="Grenada">Grenada</option><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option><option value="Guinea">Guinea</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Hawaii">Hawaii</option><option value="Honduras">Honduras</option><option value="Hong Kong">Hong Kong</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="Indonesia">Indonesia</option><option value="India">India</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Isle of Man">Isle of Man</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="Korea North">Korea North</option><option value="Korea Sout">Korea South</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Macau">Macau</option><option value="Macedonia">Macedonia</option><option value="Madagascar">Madagascar</option><option value="Malaysia">Malaysia</option><option value="Malawi">Malawi</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mayotte">Mayotte</option><option value="Mexico">Mexico</option><option value="Midway Islands">Midway Islands</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montserrat">Montserrat</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Nambia">Nambia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherland Antilles">Netherland Antilles</option><option value="Netherlands">Netherlands (Holland, Europe)</option><option value="Nevis">Nevis</option><option value="New Caledonia">New Caledonia</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option value="Norfolk Island">Norfolk Island</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau Island">Palau Island</option><option value="Palestine">Palestine</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Phillipines">Philippines</option><option value="Pitcairn Island">Pitcairn Island</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Puerto Rico">Puerto Rico</option><option value="Qatar">Qatar</option><option value="Republic of Montenegro">Republic of Montenegro</option><option value="Republic of Serbia">Republic of Serbia</option><option value="Reunion">Reunion</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="St Barthelemy">St Barthelemy</option><option value="St Eustatius">St Eustatius</option><option value="St Helena">St Helena</option><option value="St Kitts-Nevis">St Kitts-Nevis</option><option value="St Lucia">St Lucia</option><option value="St Maarten">St Maarten</option><option value="St Pierre & Miquelon">St Pierre & Miquelon</option><option value="Saipan">Saipan</option><option value="Samoa">Samoa</option><option value="Samoa American">Samoa American</option><option value="San Marino">San Marino</option><option value="Sao Tome & Principe">Sao Tome & Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Swaziland">Swaziland</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Tahiti">Tahiti</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option value="Tonga">Tonga</option><option value="Trinidad & Tobago">Trinidad & Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Turks & Caicos Is">Turks & Caicos Is</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="United Kingdom">United Kingdom</option><option value="Ukraine">Ukraine</option><option value="United Arab Erimates">United Arab Emirates</option><option value="United States of America">United States of America</option><option value="Uraguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican City State">Vatican City State</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option><option value="Virgin Islands (USA)">Virgin Islands (USA)</option><option value="Wake Island">Wake Island</option><option value="Wallis & Futana Is">Wallis & Futana Is</option><option value="Yemen">Yemen</option><option value="Zaire">Zaire</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Imagen Perfil-->
+                            <div class="d-flex col-9  ms-auto mb-3"style=" margin: 0 auto;">
+                                <span class="input-group-text" id="basic-addon20"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                                    <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                                </svg></span>
+                                <input type="file" class="form-control" id="fileimg" accept="image/*">
+                            </div>
+                    </form>
+                    <!--Abajo finla-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" onclick="comprobarErrores()"class="btn btn-primary">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!--Todos los div nombre correo etc-->
+                    <div class="modal-body row">
+                        <!--Nombre y Correo-->
+                        <div class="row">
+                            <!--Nombre-->
+                            <div class="d-flex col-6  ms-auto mb-3">
+                                <span class="input-group-text" id="basic-addon7"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                            </div>
+                            <!--Correo-->
+                            <div class="d-flex col-6  ms-auto mb-3">
+                                <span class="input-group-text" id="basic-addon8"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/></svg>
+                                </span>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                            </div>
+                        </div>
+                        <!--Comentario-->
+                        <div class="row">
+                            <div class="form-floating col-12">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px; "></textarea>
+                                <label for="floatingTextarea" style="padding-left:27px;">Comentario...</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Abajo finla-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <nav class="navbar bg ">
+                <div class="container">
+                    <a href="Index.html" target="Menu">
+                        <img src="Fotos/ALLGAMESL.png" alt="" width="150" height="35">
+                    </a>
+                </div>
+            </nav>
+            <!-- Boton derecha al compremir la ventana -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Capsulas -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown espacioentrebarras">
+                        <a class="nav-link dropdown-toggle dropdown-perfil" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Plataforma
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1" style="position: absolute;transform: translate(10px, 1px);">
+                            <li><a class="dropdown-item" href="Pagina%20Plataforma.html">PC</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Plataforma.html">Play Station</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Plataforma.html">X Box</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Plataforma.html">Nintendo</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Plataforma.html">ALL G</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown espacioentrebarras">
+                        <a class="nav-link dropdown-toggle dropdown-perfil" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Inventario
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2" style="position: absolute;transform: translate(10px, 1px);">
+                            <li><a class="dropdown-item" href="Pagina%20Inventario.html">Favoritos</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Inventario.html">En Proceso</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Inventario.html">Terminado</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Inventario.html">Llista de espera</a></li>
+                            <li><a class="dropdown-item" href="Pagina%20Inventario.html">ALL G</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Buscador y Perfil-->
+                <div class="d-flex collapse navbar-collapse">
+                    <!-- Buscador-->
+                    <form class="d-flex w-100 me-5  align-items-center espacioenlabarra">
+                        <input type="search" class="form-control me-3 " placeholder="Search...">
+                        <button type="button" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <!-- Foto Perfil y Lista-->
+                    <div>
+                        <div class="row">
+                            <!--Foto Perfil-->
+                            <div class="col-6">
+                                <a href="#" class="d-block link-dark text-decoration-none show ">
+                                    <img src="Fotos/PerfilUsuario.jpg" alt="mdo" width="43" height="43" class="rounded-circle">
+                                </a>
+                            </div>
+                            <!--Exapand-->
+                            <div class="col-6 dropdown" style="padding-top: 8px;">
+                                <button  class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+                                    </svg>
+                                </button>
+                                <!--Lista-->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 44px);" data-popper-placement="bottom-end">
+                                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                        Mi Perfil
+                                    </button>
+                                    <li><a class="dropdown-item" href="Pagina%20todos%20los%20juegos.html">ALL G</a></li>
+                                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                        Soporte
+                                    </button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Parte Central-->
+<!--Primera Parte Inventario1-->
+<div class="Principal">
+    <div>
+        <ul class="nav nav-pills mb-3 row" id="PrimeraParte" role="tablist">
+            <!--Favorito-->
+            <li class="nav-item d-flex col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6" role="presentation">
+            <span class="input-group-text" style="color:red;"id="basic-addon9">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                 </svg>
+            </span>
+                <button class="nav-link active" style="background:#6c757d;color:#fff;" id="pills-Favorito-tab" data-bs-toggle="pill" data-bs-target="#pills-Favorito" type="button" role="tab" aria-controls="pills-Favorito" aria-selected="true">Favorito</button>
+            </li>
+            <!--En Proceso-->
+            <li class="nav-item d-flex col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6" role="presentation">
+            <span class="input-group-text" style="color:yellowgreen;" id="basic-addon10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                </svg>
+            </span>
+                <button class="nav-link btn-lg" style="background:#6c757d;color:#fff;" id="pills-EnProceso-tab" data-bs-toggle="pill" data-bs-target="#pills-EnProceso" type="button" role="tab" aria-controls="pills-EnProceso" aria-selected="false">En Proceso</button>
+            </li>
+            <!--Terminado-->
+            <li class="nav-item d-flex col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6" role="presentation">
+            <span class="input-group-text" style="color:purple;" id="basic-addon11">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                  <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                  <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+               </svg>
+            </span>
+                <button class="nav-link btn-lg" style="background:#6c757d;color:#fff;" id="pills-Terminado-tab" data-bs-toggle="pill" data-bs-target="#pills-Terminado" type="button" role="tab" aria-controls="pills-Terminado" aria-selected="false">Terminado</button>
+            </li>
+            <!--LLista de Espera-->
+            <li class="nav-item d-flex col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-6 col-6" role="presentation">
+            <span class="input-group-text"style="color:goldenrod;" id="basic-addon12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                  <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                </svg>
+            </span>
+                <button class="nav-link btn-lg" style="background:#6c757d;color:#fff;" id="pills-LListadeEspera-tab " data-bs-toggle="pill" data-bs-target="#pills-LListadeEspera" type="button" role="tab" aria-controls="pills-LListadeEspera" aria-selected="false">LLista de Espera</button>
+            </li>
+            <!--Ver mas-->
+            <li class="nav-item d-flex col-xxl-1 col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6" style="direction:rtl" role="presentation">
+                <a class="btn btn-secondary btn-lg" style="background:#6c757d;color:#fff;" href="Pagina%20Inventario.html" role="button">Ver mas</a>
+            </li>
+        </ul>
+        <div>
+            <div class="tab-content colorFondoGrisinventario" id="PrimeraParteContent">
+                    <!--Favoritos-->
+                    <div class="tab-pane fade show active " id="pills-Favorito" role="tabpanel" aria-labelledby="pills-Favorito-tab" >
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                  <img src="Fotos/logo/Plataforma/Pc/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/batman-arkham-asylum-goty-cover-ICONO.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/call-of-duty-black-ops-ii-cover.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/rust-cover.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--En Proceso-->
+                    <div class="tab-pane fade" id="pills-EnProceso" role="tabpanel" aria-labelledby="pills-EnProceso-tab">
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/tom-clancys-rainbow-six-siege-cover-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/csgo%20logo.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/GTA_V.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Terminado-->
+                    <div class="tab-pane fade" id="pills-Terminado" role="tabpanel" aria-labelledby="pills-Terminado-tab">
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/batman-arkham-asylum-goty-cover-ICONO.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Play/Crash-Bandicoot-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Play/Driv3r-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Play/Spyro-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--LLista de Espera-->
+                    <div class="tab-pane fade" id="pills-LListadeEspera" role="tabpanel" aria-labelledby="pills-LListadeEspera-tab">
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/dying-light-cover-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/doom-cover-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/mad-max-cover-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                                <a href="Pagina%20info%20juegos.html">
+                                    <img src="Fotos/logo/Plataforma/Pc/yakuza-0-cover-icono.jpg" class="d-block prueba1" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Segunda parte Inventario2-->
+<div class="Principal">
+    <div  class="colorFondoGrisinventario" >
+        <div>
+            <ul class="nav nav-pills mb-3 row" style="padding-top: 50px;padding-bottom: 50px;" id="SegundaParte" role="tablist">
+                <!--PC-->
+                <li class="nav-item  col-md-2 col-sm-2 col-6" role="presentation">
+                    <button class="nav-link  btn-lg" style="background:black;color:#fff; margin-left: 20px" id="pills-PC-tab" data-bs-toggle="pill" data-bs-target="#pills-PC" type="button" role="tab" aria-controls="pills-PC" aria-selected="false">PC</button>
+                </li>
+                <!--Play Station-->
+                <li class="nav-item  col-md-3 col-sm-3 col-6" role="presentation">
+                    <button class="nav-link btn-lg" style="background:blue;color:#fff;" id="pills-PlayStation-tab" data-bs-toggle="pill" data-bs-target="#pills-PlayStation" type="button" role="tab" aria-controls="pills-PlayStation" aria-selected="false">Play Station</button>
+                </li>
+                <!--X-Box-->
+                <li class="nav-item  col-md-2 col-sm-2 col-6" role="presentation">
+                    <button class="nav-link btn-lg" style="background:green;color:#fff;" id="pills-XBox-tab" data-bs-toggle="pill" data-bs-target="#pills-XBox" type="button" role="tab" aria-controls="pills-XBox" aria-selected="false">X-Box</button>
+                </li>
+                <!--Nintendo-->
+                <li class="nav-item  col-md-2 col-sm-2 col-6" role="presentation">
+                    <button class="nav-link btn-lg" style="background:red;color:#fff;" id="pills-Nintendo-tab" data-bs-toggle="pill" data-bs-target="#pills-Nintendo" type="button" role="tab" aria-controls="pills-Nintendo" aria-selected="false">Nintendo</button>
+                </li>
+                <!--ALLG-->
+                <li class="nav-item  col-md-3 col-sm-3 col-6" style="direction:rtl" role="presentation">
+                    <button class="nav-link active btn-lg" style="background:fuchsia;color:#fff;margin-right: 20px" id="pills-ALLG-tab" data-bs-toggle="pill" data-bs-target="#pills-ALLG" type="button" role="tab" aria-controls="pills-ALLG" aria-selected="true">ALLG</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="tab-content" id="SegundaParteContent">
+                <!--PC-->
+                <div class="tab-pane fade" id="pills-PC" role="tabpanel" aria-labelledby="pills-Favorito-tab" >
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+
+                            <img src="Fotos/logo/Plataforma/Pc/yakuza-0-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Yakuza 0</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/csgo%20logo.jpg" class="d-block prueba1" alt="">
+                            <p>Counter-Strike: Global Offensive</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            <p>Dragon Ball Fighterz</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/rust-cover.jpg" class="d-block prueba1" alt="">
+                            <p>RUST</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/dying-light-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Dying Light</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/doom-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Doom</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/mad-max-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Mad Max</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/tom-clancys-rainbow-six-siege-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <P>Tom Clancys Rainbow Six Siege</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/GTA_V.jpg" class="d-block prueba1" alt="">
+                            <p>Grand Theft Auto V</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/batman-arkham-asylum-goty-cover-ICONO.jpg" class="d-block prueba1" alt="">
+                            <P>Bataman Arkham Asylum Goty</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Pc/call-of-duty-black-ops-ii-cover.jpg" class="d-block prueba1" alt="">
+                            <p>Call of Duty Black Ops II</p>
+                        </div>
+                    </div>
+                </div>
+                <!--PlayStation-->
+                <div class="tab-pane fade" id="pills-PlayStation" role="tabpanel" aria-labelledby="pills-EnProceso-tab">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/gow4_ps4-icono.jpg" class="d-block prueba1" alt="">
+                            <p>God of War 4</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/metro-exodus-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Metro Exodus</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/the%20last%20of%20us1-icono.jpg" class="d-block prueba1" alt="">
+                            <p>The Last Of Us I</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/Spiderman-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Spiderman</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/Crash-Bandicoot-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Crash Bandicoot</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/Driv3r-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Driv3r</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Play/Spyro-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Spyro</p>
+                        </div>
+                    </div>
+                </div>
+                <!--XBox-->
+                <div class="tab-pane fade" id="pills-XBox" role="tabpanel" aria-labelledby="pills-Terminado-tab">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Xbox/minecraft-xbox-one-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Minecraft</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Xbox/evolve-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Evolve</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Xbox/gear-of-war-4-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Gear Of War 4</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Xbox/the-witcher-3-icono.jpg" class="d-block prueba1" alt="">
+                            <p>The Witcher III</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Nintendo-->
+                <div class="tab-pane fade" id="pills-Nintendo" role="tabpanel" aria-labelledby="pills-LListadeEspera-tab">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                              <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>-->
+                            <img src="Fotos/logo/Plataforma/Nintendo/mario-deluxe-8-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Mario Deluxe 8</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Nintendo/zelda-icono.jpg" class="d-block prueba1" alt="">
+                            <P>Zelda</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Nintendo/animal-crossing-new-horizons-switch-cover-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Animal Crossing New H</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <!--<a href="#"
+                             <img src="Fotos/logo/Favoritos/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                           </a>-->
+                            <img src="Fotos/logo/Plataforma/Nintendo/wii-sports-icono.jpg" class="d-block prueba1" alt="">
+                            <p>Wii Sports</p>
+                        </div>
+                    </div>
+                </div>
+                <!--ALLG-->
+                <div class="tab-pane fade show active" id="pills-ALLG" role="tabpanel" aria-labelledby="pills-LListadeEspera-tab">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                              <img src="Fotos/logo/Plataforma/Pc/yakuza-0-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Yakuza 0</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/csgo%20logo.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Counter-Strike: Global Offensive</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/dragon-ball-fighterz_logo.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Dragon Ball Fighterz</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/rust-cover.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>RUST</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/gow4_ps4-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>God of War 4</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/metro-exodus-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Metro Exodus</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/the%20last%20of%20us1-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>The Last Of Us I</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/Spiderman-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Spiderman</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Xbox/minecraft-xbox-one-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Minecraft</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Xbox/evolve-icono.jpg" class="d-block prueba1" alt="">">
+                            </a>
+                            <p>Evolve</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Xbox/gear-of-war-4-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Gear Of War 4</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Xbox/the-witcher-3-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>The Witcher III</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Nintendo/mario-deluxe-8-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Mario Deluxe 8</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Nintendo/zelda-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <P>Zelda</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Nintendo/animal-crossing-new-horizons-switch-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Animal Crossing New Horizons</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Nintendo/wii-sports-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Wii Sports</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/tom-clancys-rainbow-six-siege-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <P>Tom Clancys Rainbow Six Siege</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/GTA_V.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Grand Theft Auto V</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/batman-arkham-asylum-goty-cover-ICONO.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <P>Bataman Arkham Asylum Goty</P>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/call-of-duty-black-ops-ii-cover.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Call of Duty Black Ops II</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/Crash-Bandicoot-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Crash Bandicoot</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/Driv3r-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Driv3r</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Play/Spyro-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Spyro</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/dying-light-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Dying Light</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/doom-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Doom</p>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 centrarfotosinventario">
+                            <a href="Pagina%20info%20juegos.html">
+                                <img src="Fotos/logo/Plataforma/Pc/mad-max-cover-icono.jpg" class="d-block prueba1" alt="">
+                            </a>
+                            <p>Mad Max</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pie de pagina-->
+<footer class="bg-light text-center text-lg-start">
+    <div class="p-4">
+        <div class="row">
+            <!-- Redes Sociales -->
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 Textocenter"  >
+                <h5 class="text-uppercase">Follow us</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="espacioentrefollow">
+                        <button type="button" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="espacioentrefollow">
+                        <button type="button" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="espacioentrefollow">
+                        <button type="button" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Creador -->
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 Textocenter">
+                <h5 class="text-uppercase">CREADOR</h5>
+                <p>HOUSSAM AMROUCH</p>
+                <p>FECHA CRACION:</p>
+                <p>14/05/21</p>
+            </div>
+            <!-- Fotos Pies de pagina -->
+            <div id="carouselExampleIndicators" class="carousel slide col-xxl-6 col-xl-5 col-lg-5 col-md-7 col-sm-6 col-12" data-bs-ride="carousel">
+                <div class="carousel-inner caja1">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img src="Fotos/DBZ.jpg" class="d-block " alt="DBZ">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="Fotos/GTA%20V.jpg" class="d-block " alt="gtav">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="Fotos/Valorant.jpg" class="d-block " alt="valorant">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="Fotos/selfi%20csgo.jpg" class="d-block " alt="csgoselfi">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="Fotos/fiora%20pentakill.jpg" class="d-block " alt="fiorapenta">
+                    </div>
+                </div>
+            </div>
+            <!-- QR -->
+            <div class="carousel slide col-xxl-1 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-7 espacioderechaQR" data-bs-ride="carousel">
+                <div class="carousel-item active Textocenter">
+                    <h5 class="text-uppercase">Descargar APP</h5>
+                    <div><img src="Fotos/qr1.png" class="d-block w-100" alt="QR"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Formulario-->
+<script>
+    var email_patt = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var div_error=document.getElementById("msg_error");
+    div_error.style.display="none";
+
+    function comprobarErrores(){
+        var nom = document.getElementById("nom");
+        var llin1 = document.getElementById("llin1");
+        var email = document.getElementById("email");
+        var hasError = false;
+        div_error.innerHTML="<h4>Errores de validacion:</h4>";
+        nom.classList.remove("error");
+        llin1.classList.remove("error");
+        email.classList.remove("error");
+
+
+        if(nom.value.length<=0||nom.value.length>10){
+            nom.classList.add("error");
+            div_error.innerHTML+="<p>El nombre tiene un tamano<!--tamaño-->incorrecto</p>";
+            div_error.style.display="block";
+            hasError=true;
+        }
+        if(llin1.value.length<=0||llin1.value.length>20){
+            llin1.classList.add("error");
+            div_error.innerHTML+="<p>El Apellido1 tiene un tamano<!--tamaño--> incorrecto</p>";
+            div_error.style.display="block";
+            hasError=true;
+        }
+        if (!email_patt.test(email.value)) {
+            email.classList.add("error");
+            div_error.innerHTML+="<p>El gmail es incorrecto</p>";
+            div_error.style.display="block";
+            hasError=true;
+        }
+        if(!hasError){
+            div_error.style.display="none";
+        }
+    }
+</script>
+<script src="bootstrap/js/bootstrap.min.js">
+</script>
+</body>
+</html>
